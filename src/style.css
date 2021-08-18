@@ -141,18 +141,21 @@ h1 {
 .celsius-link {
   text-decoration: none;
 }
-.celsius-link:hover {
-  text-decoration: underline;
-}
 
 .fahrenheit-link {
   text-decoration: none;
 }
 
-.fahrenheit-link:hover {
-  text-decoration: underline;
-}
-
 .temp {
   font-size: 45px;
+}
+
+.weather-app .active {
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-app .active:hover {
+  text-decoration: none;
 }

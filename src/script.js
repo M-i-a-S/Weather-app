@@ -24,25 +24,7 @@ if (currentMinutes < 10) {
 let textTime = document.querySelector(".circle-txt-day");
 textTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
-//function showCelsius(event) {
-//event.preventDefault();
-//let celsiusValue = document.querySelector(".temp");
-//}
-
-//let celsiusLink = document.querySelector(".celsius-link");
-//celsiusLink.addEventListener("click", showCelsius);
-
-//function showFahrenheit(event) {
-//event.preventDefault();
-//let fahrenheitValue = document.querySelector(".temp");
-//fahrenheitValue.innerHTML = 66;
-//}
-
-//let fahrenheitLink = document.querySelector(".fahrenheit-link");
-//fahrenheitLink.addEventListener("click", showFahrenheit);
-
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temp-element");
   let cityElement = document.querySelector("#city");
   let humidity = response.data.main.humidity;
@@ -51,7 +33,9 @@ function showTemperature(response) {
   let windSpeedElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = temperature;
+  celsiusTemp = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = `${humidity}%`;
   windSpeedElement.innerHTML = `${windSpeed} kmph`;
@@ -88,7 +72,9 @@ function showGeoTemperature(response) {
   let windSpeedElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
-  currentTemperatureElement.innerHTML = currentTemperature;
+  celsiusTemp = response.data.main.temp;
+
+  currentTemperatureElement.innerHTML = Math.round(celsiusTemp);
   cityNameElement.innerHTML = cityName;
   humidityElement.innerHTML = `${humidity}%`;
   windSpeedElement.innerHTML = `${windSpeed} kmph`;
@@ -111,7 +97,31 @@ function getCurrentData() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitValue = document.querySelector(".temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  fahrenheitValue.innerHTML = Math.round(celsiusTemp * 1.8 + 32);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let celsiusValue = document.querySelector(".temp");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  celsiusValue.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentData);
+
+let fahrenheitLink = document.querySelector(".fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector(".celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
 
 search("Slavonski Brod");
