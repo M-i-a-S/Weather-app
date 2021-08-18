@@ -24,11 +24,15 @@
   <body>
     <div class="container">
       <div class="weather-app">
-      <h1>
-        <img src="images/sun-turning.gif" alt="sun.gif" class="sun-gif" id="icon"/>
-        <span class="temp" id="temp-element"> <strong>14</strong> 
-        </span>
-         <a href="#" id="celsius-link" class="active">°C</a>|<a
+        <h1>
+          <img
+            src="images/sun-turning.gif"
+            alt="sun.gif"
+            class="sun-gif"
+            id="icon"
+          />
+          <span class="temp" id="temp-element"> <strong>14</strong> </span>
+          <a href="#" id="celsius-link" class="active">°C</a>|<a
             href="#"
             id="fahrenheit-link"
             >°F</a
@@ -36,70 +40,75 @@
           <div>
             <em class="description">Few clouds</em>
           </div>
-      </h1>
-      <div class="circle">
-        <div class="circle-txt-city" id="city">Slavonski Brod</div>
-        <div class="circle-txt-day">Wednesday 11:05</div>
-      </div>
+        </h1>
+        <div class="circle">
+          <div class="circle-txt-city" id="city"></div>
+          <div class="circle-txt-day"></div>
+        </div>
 
-      <div class="circle2">
-        <div class="circle2-txt-wind">
-          <strong> Wind: </strong> <span id="wind"> 10 kmph </span>
+        <div class="circle2">
+          <div class="circle2-txt-wind">
+            <strong> Wind: </strong> <span id="wind"></span>
+          </div>
+          <div class="circle2-txt-hum">
+            <strong> Humidity: </strong> <span id="hum"></span>
+          </div>
         </div>
-        <div class="circle2-txt-hum">
-          <strong> Humidity: </strong> <span id="hum"> 40% </span>
-        </div>
-      </div>
 
-      <form class="search-bar">
-        <input type="text" placeholder="Enter a city" id="search-city" autocomplete="off"/>
-        <input type="submit" value="Search" />
-        <input type="button" value="Current" id="current-button" />
-      </form>
+        <form class="search-bar">
+          <input
+            type="text"
+            placeholder="Enter a city"
+            id="search-city"
+            autocomplete="off"
+          />
+          <input type="submit" value="Search" />
+          <input type="button" value="Current" id="current-button" />
+        </form>
 
-      <hr class="line" />
-      <div class="days">
-        <div class="row">
-          <div class="col-2">Thu</div>
-          <div class="col-2">Fri</div>
-          <div class="col-2">Sat</div>
-          <div class="col-2">Sun</div>
-          <div class="col-2">Mon</div>
+        <hr class="line" />
+        <div class="days">
+          <div class="row">
+            <div class="col-2">Thu</div>
+            <div class="col-2">Fri</div>
+            <div class="col-2">Sat</div>
+            <div class="col-2">Sun</div>
+            <div class="col-2">Mon</div>
+          </div>
+          <div class="row">
+            <div class="col-2">15°/30°</div>
+            <div class="col-2">14°/27°</div>
+            <div class="col-2">13°/29°</div>
+            <div class="col-2">12°/26°</div>
+            <div class="col-2">19°/30°</div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              <img src="images/sun.png" alt="sun" width="70" />
+            </div>
+            <div class="col-2">
+              <img src="images/cloud-sun.png" alt="sun" width="70" />
+            </div>
+            <div class="col-2">
+              <img src="images/sun.png" alt="sun" width="70" />
+            </div>
+            <div class="col-2">
+              <img src="images/rain.png" alt="sun" width="70" />
+            </div>
+            <div class="col-2">
+              <img src="images/sun.png" alt="sun" width="70" />
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-2">15°/30°</div>
-          <div class="col-2">14°/27°</div>
-          <div class="col-2">13°/29°</div>
-          <div class="col-2">12°/26°</div>
-          <div class="col-2">19°/30°</div>
+        <div class="update">*Updated 5 mins ago</div>
+        <div class="coder">
+          <a href="https://github.com/M-i-a-S/Weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by Mia Stajić
         </div>
-        <div class="row">
-          <div class="col-2">
-            <img src="images/sun.png" alt="sun" width="70" />
-          </div>
-          <div class="col-2">
-            <img src="images/cloud-sun.png" alt="sun" width="70" />
-          </div>
-          <div class="col-2">
-            <img src="images/sun.png" alt="sun" width="70" />
-          </div>
-          <div class="col-2">
-            <img src="images/rain.png" alt="sun" width="70" />
-          </div>
-          <div class="col-2">
-            <img src="images/sun.png" alt="sun" width="70" />
-          </div>
-        </div>
-      </div>
-      <div class="update">*Updated 5 mins ago</div>
-      <div class="coder">
-        <a href="https://github.com/M-i-a-S/Weather-app" target="_blank">Open-source code</a>
-        by Mia Stajić
       </div>
     </div>
-  </div>
-  </div>
     <script src="src/script.js"></script>
-    
   </body>
 </html>

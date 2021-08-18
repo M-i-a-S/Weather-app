@@ -27,6 +27,7 @@ textTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temp-element");
   let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector(".description");
   let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#hum");
   let windSpeed = Math.round(response.data.wind.speed);
@@ -37,6 +38,7 @@ function showTemperature(response) {
 
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = `${humidity}%`;
   windSpeedElement.innerHTML = `${windSpeed} kmph`;
   iconElement.setAttribute(
@@ -46,26 +48,27 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
-function getCurrentCity(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "dabe2819a5207f64cd7ba85175ca0828";
-  let currentCity = document.querySelector("#search-city");
-  let signCity = document.querySelector(".circle-txt-city");
-  signCity.innerHTML = currentCity.value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity.value}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-city");
+  search(cityInput.value);
 }
 
 let searchBar = document.querySelector(".search-bar");
 searchBar.addEventListener("submit", getCurrentCity);
 
 function showGeoTemperature(response) {
-  console.log(response);
-  let currentTemperature = Math.round(response.data.main.temp);
   let currentTemperatureElement = document.querySelector("#temp-element");
   let cityName = response.data.name;
   let cityNameElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector(".description");
   let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#hum");
   let windSpeed = Math.round(response.data.wind.speed);
@@ -76,6 +79,7 @@ function showGeoTemperature(response) {
 
   currentTemperatureElement.innerHTML = Math.round(celsiusTemp);
   cityNameElement.innerHTML = cityName;
+  descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = `${humidity}%`;
   windSpeedElement.innerHTML = `${windSpeed} kmph`;
   iconElement.setAttribute(
