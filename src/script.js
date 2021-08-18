@@ -62,7 +62,7 @@ function handleSubmit(event) {
 }
 
 let searchBar = document.querySelector(".search-bar");
-searchBar.addEventListener("submit", getCurrentCity);
+searchBar.addEventListener("submit", handleSubmit);
 
 function showGeoTemperature(response) {
   let currentTemperatureElement = document.querySelector("#temp-element");
