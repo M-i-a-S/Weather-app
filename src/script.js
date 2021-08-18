@@ -122,10 +122,10 @@ let celsiusTemp = null;
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentData);
 
-let fahrenheitLink = document.querySelector(".fahrenheit-link");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
-let celsiusLink = document.querySelector(".celsius-link");
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Slavonski Brod");
