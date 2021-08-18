@@ -44,6 +44,7 @@ textTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temp-element");
+  let cityElement = document.querySelector("#city");
   let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#hum");
   let windSpeed = Math.round(response.data.wind.speed);
@@ -51,6 +52,7 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = temperature;
+  cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = `${humidity}%`;
   windSpeedElement.innerHTML = `${windSpeed} kmph`;
   iconElement.setAttribute(
@@ -111,3 +113,5 @@ function getCurrentData() {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentData);
+
+search("Slavonski Brod");
