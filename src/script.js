@@ -24,6 +24,26 @@ if (currentMinutes < 10) {
 let textTime = document.querySelector(".circle-txt-day");
 textTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="forecast-day">${day}</div>
+        <div class="forecast-temperature">15°/30°</div>
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="65" />
+      </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temp-element");
   let cityElement = document.querySelector("#city");
@@ -129,3 +149,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Slavonski Brod");
+
+displayForecast();
