@@ -142,11 +142,11 @@ h1 {
   background-color: #fff;
 }
 
-.celsius-link {
+#celsius-link {
   text-decoration: none;
 }
 
-.fahrenheit-link {
+#fahrenheit-link {
   text-decoration: none;
 }
 
@@ -168,7 +168,7 @@ h1 {
   border: 2px solid #fff;
   border-radius: 5px;
   border-bottom-color: #5ebdf5;
-  background: #f1f1f1;
+  background: ##f8f6f6;
 }
 
 #submit-button,
@@ -177,10 +177,14 @@ h1 {
   border-radius: 5px;
   border-bottom-color: #5ebdf5;
   border-right-color: #5ebdf5;
-  background: #f1f1f1;
+  background: #f8f6f6;
 }
 
 #submit-button:hover,
 #current-button:hover {
   background: #5ebdf5;
+}
+
+.forecast-day {
+  font-weight: bold;
 }
