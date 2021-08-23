@@ -163,3 +163,24 @@ h1 {
 .weather-app .active:hover {
   text-decoration: none;
 }
+
+#search-city {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  border-bottom-color: #5ebdf5;
+  background: #f1f1f1;
+}
+
+#submit-button,
+#current-button {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  border-bottom-color: #5ebdf5;
+  border-right-color: #5ebdf5;
+  background: #f1f1f1;
+}
+
+#submit-button:hover,
+#current-button:hover {
+  background: #5ebdf5;
+}
