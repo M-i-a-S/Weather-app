@@ -84,6 +84,8 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
@@ -127,6 +129,8 @@ function showGeoTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   currentTemperatureElement.innerHTML = Math.round(celsiusTemp);
   cityNameElement.innerHTML = cityName;
